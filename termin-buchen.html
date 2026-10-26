@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Termin buchen – Laserhaarentfernung Amriswil | ELOURE THE STUDIO</title>
+<meta name="description" content="Termin für Laserhaarentfernung in Amriswil anfragen: Behandlung wählen, Wunschtermin auswählen und Anfrage an ELOURE THE STUDIO senden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Serif+Display&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.phero{padding:64px 0 50px}
+.bk{display:grid;grid-template-columns:1fr 340px;gap:36px;align-items:start}
+.steps{display:flex;gap:8px;margin-bottom:26px;list-style:none;flex-wrap:wrap}
+.steps li{flex:1;min-width:120px}
+.steps button{width:100%;display:flex;gap:10px;align-items:center;background:none;border:0;border-bottom:2px solid var(--beige);padding:0 0 12px;cursor:pointer;font:600 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#8a8478;text-align:left;transition:.3s}
+.steps button b{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;font:500 15px var(--serif)}
+.steps li.on button{color:var(--espresso);border-color:var(--terra)}
+.steps li.on button b{background:var(--terra);border-color:var(--terra);color:#fff}
+.steps li.done button{color:var(--olive-deep);border-color:var(--olive)}
+.steps li.done button b{background:var(--olive);border-color:var(--olive);color:#fff}
+.steps button:disabled{cursor:default}
+.panel{background:var(--white);border-radius:26px;padding:34px 34px 30px;box-shadow:var(--shadow)}
+.panel h2{font-size:clamp(28px,3vw,36px);margin-bottom:6px}
+.panel>p.sub{color:#5b5750;font-size:14px;margin-bottom:22px}
+.nav2{display:flex;justify-content:space-between;gap:12px;margin-top:28px;flex-wrap:wrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tab{padding:9px 16px;border-radius:999px;border:1px solid var(--beige);background:var(--ivory);font:600 10.5px var(--sans);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;color:var(--espresso);transition:.3s}
+.tab[aria-selected="true"]{background:var(--olive);border-color:var(--olive);color:#fff}
+.opts{display:grid;gap:10px;max-height:520px;overflow:auto;padding:4px 6px 4px 2px;margin:0 -6px 0 -2px}
+.opt{display:grid;grid-template-columns:22px 1fr auto;gap:14px;align-items:center;border:1px solid var(--beige);background:var(--ivory);border-radius:16px;padding:14px 18px;cursor:pointer;transition:.3s var(--ease);text-align:left;font:inherit;color:inherit;width:100%}
+.opt:hover{border-color:var(--olive);transform:translateY(-1px)}
+.opt .rd{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--olive);position:relative}
+.opt[aria-checked="true"]{border-color:var(--terra);background:#fff;box-shadow:0 0 0 3px rgba(184,111,79,.14)}
+.opt[aria-checked="true"] .rd{border-color:var(--terra)}
+.opt[aria-checked="true"] .rd::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--terra)}
+.opt .t{font-family:var(--serif);font-size:21px;line-height:1.2}
+.opt .m{font-size:12.5px;color:#6b665c}
+.opt .p{font-family:var(--serif);font-size:24px;text-align:right;white-space:nowrap}
+.opt .p small{display:block;font:500 11px var(--sans);color:#6b665c;margin-top:-2px}
+.opt[disabled]{opacity:.55;cursor:not-allowed;transform:none}
+.zones{margin:10px 0 0 36px;padding:14px 18px;border-radius:14px;background:var(--cream);display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:13.5px}
+.zones .st{display:inline-flex;align-items:center;border:1px solid var(--beige);border-radius:999px;background:#fff}
+.zones .st button{width:36px;height:36px;border:0;background:none;font-size:20px;cursor:pointer;color:var(--olive-deep)}
+.zones .st output{min-width:30px;text-align:center;font-weight:600}
+/* calendar */
+.dt{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.cal .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.cal .hd b{font-family:var(--serif);font-size:24px;font-weight:500;text-transform:capitalize}
+.cal .hd button{width:36px;height:36px;border-radius:50%;border:1px solid var(--beige);background:none;cursor:pointer;font-size:16px}
+.cal .hd button:disabled{opacity:.35;cursor:default}
+.cal .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cal .dow{font:600 10px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:#8a8478;padding:6px 0}
+.cal .d{aspect-ratio:1;border-radius:50%;border:0;background:none;font:500 14px var(--sans);cursor:pointer;color:var(--espresso);transition:.25s}
+.cal .d:hover:not(:disabled){background:var(--cream)}
+.cal .d:disabled{color:#c0b9ab;cursor:default}
+.cal .d.sel{background:var(--terra);color:#fff}
+.slots h3{font-size:22px;margin-bottom:12px}
+.slots .g{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.slot{padding:11px 6px;border-radius:12px;border:1px solid var(--beige);background:var(--ivory);font:600 13px var(--sans);cursor:pointer;transition:.25s}
+.slot:hover{border-color:var(--olive)}
+.slot.sel{background:var(--terra);border-color:var(--terra);color:#fff}
+.hint{font-size:12.5px;color:#6b665c;margin-top:14px;line-height:1.55}
+/* form */
+form{display:grid;gap:16px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:6px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--olive-deep)}
+label i{font-style:normal;color:#8a8478;text-transform:none;letter-spacing:0;font-weight:500}
+input,textarea{font:500 15px var(--sans);color:var(--espresso);background:var(--ivory);border:1px solid var(--beige);border-radius:14px;padding:14px 16px;width:100%;letter-spacing:0;text-transform:none;transition:border-color .3s,box-shadow .3s}
+input:focus,textarea:focus{outline:0;border-color:var(--olive);box-shadow:0 0 0 3px rgba(119,127,96,.18)}
+input.bad,textarea.bad{border-color:#b4533b}
+textarea{min-height:110px;resize:vertical}
+.chk{display:flex;gap:10px;align-items:flex-start;text-transform:none;letter-spacing:0;font-weight:500;font-size:13px;color:#4a463e}
+.chk input{width:auto;margin-top:4px;accent-color:var(--olive)}
+.chk a{text-decoration:underline}
+.err{color:#9b3d2a;font-size:13px;min-height:18px}
+/* review */
+.rev{background:var(--ivory);border:1px solid var(--beige);border-radius:18px;padding:20px 24px;display:grid;gap:10px;font-size:14px}
+.rev div{display:grid;grid-template-columns:130px 1fr;gap:12px}.rev dt{color:#6b665c}.rev dd{font-weight:600}
+.send{display:grid;gap:12px;margin-top:22px}
+.send .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.send .btn{justify-content:center;text-align:center}
+.notice{background:var(--cream);border-left:3px solid var(--terra);border-radius:12px;padding:14px 18px;font-size:13.5px;margin-top:20px;color:#4a463e}
+.sentbox{background:#fff;border:1px solid var(--olive);border-radius:16px;padding:18px 22px;margin-top:18px;font-size:14px}
+/* summary */
+.side{position:sticky;top:104px;background:var(--cream);border-radius:26px;padding:28px 26px}
+.side h3{font-size:25px;margin-bottom:14px}
+.side dl{display:grid;gap:14px;font-size:14px}
+.side dt{font:600 10.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--olive-deep)}
+.side dd{margin-top:2px}.side dd.e{color:#8a8478}
+.side .tot{border-top:1px solid var(--beige);margin-top:18px;padding-top:16px;display:flex;justify-content:space-between;align-items:baseline}
+.side .tot strong{font-family:var(--serif);font-size:30px;font-weight:500}
+.side .alt{margin-top:18px;font-size:12.5px;color:#5b5750}
+.side .alt a{text-decoration:underline}
+@media(max-width:1000px){.bk{grid-template-columns:1fr}.side{position:static;order:2}}
+@media(max-width:700px){.panel{padding:26px 20px}.dt{grid-template-columns:1fr}.f2,.send .row2{grid-template-columns:1fr}.steps button span{display:none}.steps li{min-width:0}.rev div{grid-template-columns:1fr;gap:0}.opt{grid-template-columns:22px 1fr;}.opt .p{grid-column:2;text-align:left}.zones{margin-left:0}}
+</style>
+</head>
+<body data-page="buchen">
+<div id="site-header"></div>
+<main>
+<section class="phero">
+  <div class="blob"></div><div class="blob b2"></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Start</a> · Termin buchen</div>
+    <h1>Termin <em class="script">buchen</em></h1>
+    <p>Wähle deine Behandlung und deinen Wunschtermin – in vier einfachen Schritten. Verbindlich ist dein Termin nach unserer Bestätigung.</p>
+  </div>
+</section>
+
+<section class="section w" style="padding-top:56px">
+  <div class="wrap">
+    <div class="bk">
+      <div>
+        <ol class="steps" id="steps"></ol>
+
+        <!-- 1 -->
+        <div class="panel" id="p1">
+          <h2>Behandlung wählen</h2>
+          <p class="sub">Alle Behandlungen mit Dauer und Preis in CHF.</p>
+          <div class="tabs" id="tabs" role="tablist"></div>
+          <div class="opts" id="opts" role="radiogroup" aria-label="Behandlung"></div>
+          <div class="nav2"><span></span><button class="btn btn-terra" id="n1" disabled>Weiter <span class="arr">→</span></button></div>
+        </div>
+
+        <!-- 2 -->
+        <div class="panel" id="p2" hidden>
+          <h2>Wunschtermin</h2>
+          <p class="sub">Wähle Datum und Uhrzeit. Wir prüfen die Verfügbarkeit und bestätigen dir den Termin.</p>
+          <div class="dt">
+            <div class="cal"><div class="hd"><button id="pm" aria-label="Vorheriger Monat">‹</button><b id="mt"></b><button id="nm" aria-label="Nächster Monat">›</button></div>
+              <div class="grid" id="cg"></div>
+              <p class="hint">Mo–Fr 10:00–20:00 · Sa 10:00–16:00 · Sonntag geschlossen.</p></div>
+            <div class="slots" id="slots"><h3>Uhrzeit</h3><p class="hint" style="margin-top:0">Bitte zuerst ein Datum wählen.</p></div>
+          </div>
+          <div class="nav2"><button class="btn btn-ghost" data-go="1"><span class="arr" style="transform:none">←</span> Zurück</button><button class="btn btn-terra" id="n2" disabled>Weiter <span class="arr">→</span></button></div>
+        </div>
+
+        <!-- 3 -->
+        <div class="panel" id="p3" hidden>
+          <h2>Deine Angaben</h2>
+          <p class="sub">So erreichen wir dich für die Terminbestätigung.</p>
+          <form id="df" novalidate>
+            <div class="f2"><label>Vorname *<input name="fn" autocomplete="given-name" required></label><label>Nachname *<input name="ln" autocomplete="family-name" required></label></div>
+            <div class="f2"><label>E-Mail *<input name="email" type="email" autocomplete="email" required></label><label>Telefon / WhatsApp <i>(optional)</i><input name="tel" type="tel" autocomplete="tel"></label></div>
+            <label class="chk"><input type="checkbox" name="first"><span>Ich war noch nie bei ELOURE THE STUDIO zur Laserbehandlung.</span></label>
+            <label>Nachricht <i>(optional)</i><textarea name="msg" placeholder="z. B. Fragen, Hinweise, weitere Zonen, alternativer Wunschtermin"></textarea></label>
+            <label class="chk"><input type="checkbox" name="ok" required><span>Ich habe die <a href="https://www.elourethestudio.ch/agb-s" target="_blank" rel="noopener">AGB</a> und die <a href="https://www.elourethestudio.ch/datenschutz" target="_blank" rel="noopener">Datenschutzbestimmung</a> gelesen und akzeptiere sie. *</span></label>
+            <div class="err" id="derr" role="alert"></div>
+          </form>
+          <div class="nav2"><button class="btn btn-ghost" data-go="2"><span class="arr" style="transform:none">←</span> Zurück</button><button class="btn btn-terra" id="n3">Weiter <span class="arr">→</span></button></div>
+        </div>
+
+        <!-- 4 -->
+        <div class="panel" id="p4" hidden>
+          <h2>Prüfen &amp; senden</h2>
+          <p class="sub">Kontrolliere deine Anfrage und sende sie per WhatsApp oder E-Mail an das Studio.</p>
+          <dl class="rev" id="rev"></dl>
+          <div class="send">
+            <div class="row2">
+              <a class="btn btn-terra" id="sendWa" target="_blank" rel="noopener">Per WhatsApp senden</a>
+              <a class="btn btn-olive" id="sendMail">Per E-Mail senden</a>
+            </div>
+            <button class="btn btn-ghost" id="copy" type="button">Anfrage-Text kopieren</button>
+          </div>
+          <div class="notice"><strong>Wichtig:</strong> Deine Anfrage wird in WhatsApp bzw. deiner E-Mail-App vorbereitet und erst mit dem Absenden dort an uns übermittelt. Eine Terminanfrage ist noch keine bestätigte Buchung – verbindlich ist dein Termin nach unserer Bestätigung.</div>
+          <div class="sentbox" id="done" hidden></div>
+          <div class="nav2"><button class="btn btn-ghost" data-go="3"><span class="arr" style="transform:none">←</span> Zurück</button><button class="btn btn-ghost" id="reset">Neue Anfrage</button></div>
+        </div>
+      </div>
+
+      <aside class="side" aria-label="Deine Auswahl">
+        <h3>Deine Auswahl</h3>
+        <dl>
+          <div><dt>Behandlung</dt><dd id="sBeh" class="e">Noch nicht gewählt</dd></div>
+          <div><dt>Dauer</dt><dd id="sDur" class="e">–</dd></div>
+          <div><dt>Wunschtermin</dt><dd id="sDate" class="e">Noch nicht gewählt</dd></div>
+        </dl>
+        <div class="tot"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--olive-deep)">Preis</span><strong id="sPrice">–</strong></div>
+        <p class="alt">Lieber direkt im bestehenden Buchungssystem? <a href="https://www.elourethestudio.ch/book-online" target="_blank" rel="noopener">Zur Live-Buchung</a><br>Fragen? <a href="https://wa.me/41765297129" target="_blank" rel="noopener">WhatsApp</a> · <a href="tel:+41765297129">+41 76 529 71 29</a></p>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+<div id="site-footer"></div>
+
+<script src="assets/services.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const S = { step:1, svc:null, zones:0, cat:'all', date:null, time:null, month:null, d:{} };
+  const STEPS = ['Behandlung','Termin','Angaben','Senden'];
+  const fmtDate = d => d.toLocaleDateString('de-CH',{weekday:'long',day:'2-digit',month:'2-digit',year:'numeric'});
+  const pad = n => String(n).padStart(2,'0');
+  const svc = () => SERVICES.find(s=>s.id===S.svc);
+  const total = () => { const s=svc(); return !s||s.price==null ? null : s.price + S.zones*(s.extra||0); };
+
+  /* stepper */
+  function renderSteps(){
+    $('steps').innerHTML = STEPS.map((t,i)=>{const n=i+1, c=n===S.step?'on':(n<S.step?'done':'');
+      return `<li class="${c}"><button data-s="${n}" ${n>S.step?'disabled':''}><b>${n<S.step?'✓':n}</b><span>${t}</span></button></li>`}).join('');
+  }
+  $('steps').addEventListener('click',e=>{const b=e.target.closest('button'); if(b&&!b.disabled) go(+b.dataset.s)});
+  document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(+b.dataset.go)));
+
+  function go(n){
+    S.step=n;
+    for(let i=1;i<=4;i++) $('p'+i).hidden = i!==n;
+    renderSteps();
+    if(n===2) renderCal();
+    if(n===4) renderReview();
+    scrollTo({top:document.querySelector('.bk').offsetTop-90,behavior:'smooth'});
+  }
+
+  /* 1: services */
+  function renderTabs(){
+    $('tabs').innerHTML = '<button class="tab" data-c="all" role="tab" aria-selected="'+(S.cat==='all')+'">Alle</button>' +
+      CATS.filter(c=>c[0]!=='zusatz').map(c=>`<button class="tab" data-c="${c[0]}" role="tab" aria-selected="${S.cat===c[0]}">${c[1]}</button>`).join('');
+  }
+  $('tabs').addEventListener('click',e=>{const t=e.target.closest('.tab'); if(!t) return; S.cat=t.dataset.c; renderTabs(); renderOpts()});
+  function renderOpts(){
+    const list = SERVICES.filter(s=>S.cat==='all'||s.cat===S.cat);
+    $('opts').innerHTML = list.map(s=>{
+      const sel = s.id===S.svc;
+      const dis = s.needsFull;
+      return `<div><button class="opt" role="radio" aria-checked="${sel}" data-id="${s.id}" ${dis?'disabled':''}>
+        <span class="rd"></span>
+        <span><span class="t">${s.name}</span><br><span class="m">${dur(s.min)}${s.note?' · '+s.note:''}${dis?' · Wird bei Ganzkörper über „Zusätzliche Zonen“ hinzugefügt.':''}</span></span>
+        <span class="p">${s.price==null?'<small>Preis auf Anfrage</small>':chf(s.price)}</span></button>
+        ${sel&&s.extra?`<div class="zones"><span>Zusätzliche Zonen <small>(+CHF ${s.extra} pro Zone)</small></span>
+          <span class="st"><button type="button" data-z="-1" aria-label="Weniger">−</button><output id="zo">${S.zones}</output><button type="button" data-z="1" aria-label="Mehr">+</button></span>
+          <span class="m">Die Zeit für Zusatzzonen stimmen wir bei der Bestätigung mit dir ab.</span></div>`:''}</div>`}).join('');
+  }
+  $('opts').addEventListener('click',e=>{
+    const z=e.target.closest('[data-z]');
+    if(z){S.zones=Math.min(10,Math.max(0,S.zones+(+z.dataset.z))); $('zo').textContent=S.zones; summary(); return}
+    const o=e.target.closest('.opt'); if(!o||o.disabled) return;
+    S.svc=o.dataset.id; S.zones=0; S.time=null; $('n1').disabled=false; renderOpts(); summary();
+  });
+  $('n1').addEventListener('click',()=>go(2));
+
+  /* 2: calendar */
+  const tomorrow = (()=>{const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()+1);return d})();
+  const maxDate = (()=>{const d=new Date(tomorrow);d.setDate(d.getDate()+120);return d})();
+  S.month = new Date(tomorrow.getFullYear(), tomorrow.getMonth(), 1);
+  function renderCal(){
+    const y=S.month.getFullYear(), m=S.month.getMonth();
+    $('mt').textContent = S.month.toLocaleDateString('de-CH',{month:'long',year:'numeric'});
+    $('pm').disabled = new Date(y,m,1) <= new Date(tomorrow.getFullYear(),tomorrow.getMonth(),1);
+    $('nm').disabled = new Date(y,m+1,1) > maxDate;
+    const first=(new Date(y,m,1).getDay()+6)%7, days=new Date(y,m+1,0).getDate();
+    let h=['Mo','Di','Mi','Do','Fr','Sa','So'].map(d=>`<div class="dow">${d}</div>`).join('') + '<span></span>'.repeat(first);
+    for(let d=1; d<=days; d++){
+      const dt=new Date(y,m,d), wd=dt.getDay();
+      const off = dt<tomorrow || dt>maxDate || !SITE.hours[wd];
+      const sel = S.date && +S.date===+dt;
+      h+=`<button class="d${sel?' sel':''}" data-d="${y}-${m}-${d}" ${off?'disabled':''} aria-label="${fmtDate(dt)}">${d}</button>`;
+    }
+    $('cg').innerHTML=h; renderSlots();
+  }
+  $('pm').onclick=()=>{S.month=new Date(S.month.getFullYear(),S.month.getMonth()-1,1);renderCal()};
+  $('nm').onclick=()=>{S.month=new Date(S.month.getFullYear(),S.month.getMonth()+1,1);renderCal()};
+  $('cg').addEventListener('click',e=>{const b=e.target.closest('.d'); if(!b||b.disabled) return;
+    const [y,m,d]=b.dataset.d.split('-').map(Number); S.date=new Date(y,m,d); S.time=null; renderCal(); summary();});
+  function renderSlots(){
+    const box=$('slots');
+    if(!S.date){ box.innerHTML='<h3>Uhrzeit</h3><p class="hint" style="margin-top:0">Bitte zuerst ein Datum wählen.</p>'; $('n2').disabled=true; return }
+    const [o,c]=SITE.hours[S.date.getDay()], need=svc().min, out=[];
+    for(let t=o*60; t+need<=c*60; t+=30) out.push(`${pad(Math.floor(t/60))}:${pad(t%60)}`);
+    box.innerHTML = `<h3>${fmtDate(S.date)}</h3><div class="g">${out.map(t=>`<button class="slot${S.time===t?' sel':''}" data-t="${t}">${t}</button>`).join('')}</div>
+      <p class="hint">Dauer: ${dur(need)}${S.zones?' (zzgl. Zusatzzonen)':''}. Das ist ein Wunschtermin – die Verfügbarkeit bestätigen wir persönlich.</p>`;
+    $('n2').disabled = !S.time;
+  }
+  $('slots').addEventListener('click',e=>{const b=e.target.closest('.slot'); if(!b) return; S.time=b.dataset.t; renderSlots(); summary();});
+  $('n2').addEventListener('click',()=>go(3));
+
+  /* 3: details */
+  $('n3').addEventListener('click',()=>{
+    const f=$('df'), d=new FormData(f), err=$('derr');
+    f.querySelectorAll('input,textarea').forEach(i=>i.classList.remove('bad'));
+    const bad=[];
+    const fn=(d.get('fn')||'').trim(), ln=(d.get('ln')||'').trim(), em=(d.get('email')||'').trim();
+    if(!fn) bad.push('fn'); if(!ln) bad.push('ln');
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) bad.push('email');
+    if(bad.length){ bad.forEach(n=>f.elements[n].classList.add('bad')); err.textContent='Bitte fülle Vorname, Nachname und eine gültige E-Mail-Adresse aus.'; f.elements[bad[0]].focus(); return }
+    if(!d.get('ok')){ err.textContent='Bitte bestätige AGB und Datenschutzbestimmung.'; return }
+    err.textContent='';
+    S.d={fn,ln,email:em,tel:(d.get('tel')||'').trim(),first:!!d.get('first'),msg:(d.get('msg')||'').trim()};
+    go(4);
+  });
+
+  /* 4: review & send */
+  function requestText(){
+    const s=svc(), t=total(), x=S.d;
+    return [
+      'Terminanfrage über die Website',
+      '',
+      `Behandlung: ${s.name} (${dur(s.min)}) – ${s.price==null?'Preis auf Anfrage':chf(s.price)}`,
+      S.zones? `Zusätzliche Zonen: ${S.zones} (+CHF ${S.zones*s.extra})` : null,
+      `Preis gesamt: ${t==null?'auf Anfrage':chf(t)}`,
+      `Wunschtermin: ${fmtDate(S.date)}, ${S.time} Uhr`,
+      '',
+      `Name: ${x.fn} ${x.ln}`,
+      `E-Mail: ${x.email}`,
+      x.tel? `Telefon: ${x.tel}` : null,
+      `Erstbesuch Laserbehandlung: ${x.first?'Ja':'Nein'}`,
+      x.msg? `\nNachricht: ${x.msg}` : null,
+      '',
+      'AGB und Datenschutzbestimmung gelesen und akzeptiert.'
+    ].filter(l=>l!==null).join('\n');
+  }
+  function renderReview(){
+    const s=svc(), t=total(), x=S.d;
+    $('rev').innerHTML = [
+      ['Behandlung', `${s.name} · ${dur(s.min)}`],
+      S.zones?['Zusatzzonen', `${S.zones} × CHF ${s.extra}`]:null,
+      ['Preis', t==null?'Preis auf Anfrage':chf(t)],
+      ['Wunschtermin', `${fmtDate(S.date)}, ${S.time} Uhr`],
+      ['Name', `${x.fn} ${x.ln}`], ['E-Mail', x.email], x.tel?['Telefon',x.tel]:null, x.msg?['Nachricht',x.msg]:null
+    ].filter(Boolean).map(r=>`<div><dt>${r[0]}</dt><dd>${r[1].replace(/</g,'&lt;')}</dd></div>`).join('');
+    const txt=requestText();
+    $('sendWa').href=waLink(txt);
+    $('sendMail').href=mailLink(`Terminanfrage: ${s.name}, ${S.date.toLocaleDateString('de-CH')} ${S.time}`, txt);
+    $('done').hidden=true;
+  }
+  const afterSend = ch => { const d=$('done'); d.hidden=false; d.innerHTML = `<strong>Fast geschafft!</strong> Deine Anfrage wurde in ${ch} vorbereitet. Bitte sende sie dort ab. Wir prüfen den Wunschtermin und bestätigen dir persönlich – erst dann ist der Termin verbindlich.`; };
+  $('sendWa').addEventListener('click',()=>afterSend('WhatsApp'));
+  $('sendMail').addEventListener('click',()=>afterSend('deiner E-Mail-App'));
+  $('copy').addEventListener('click',async()=>{
+    const b=$('copy');
+    try{ await navigator.clipboard.writeText(requestText()); b.textContent='Kopiert ✓'; }catch(e){ b.textContent='Kopieren nicht möglich'; }
+    setTimeout(()=>b.textContent='Anfrage-Text kopieren',2200);
+  });
+  $('reset').addEventListener('click',()=>{ S.svc=null;S.zones=0;S.date=null;S.time=null;S.d={}; $('df').reset(); $('n1').disabled=true; renderOpts(); summary(); go(1); });
+
+  /* summary */
+  function summary(){
+    const s=svc(), t=total();
+    const set=(id,v,empty)=>{const e=$(id); e.textContent=v||empty; e.classList.toggle('e',!v)};
+    set('sBeh', s&&s.name, 'Noch nicht gewählt');
+    set('sDur', s&&dur(s.min)+(S.zones?' + Zusatzzonen':''), '–');
+    set('sDate', S.date&&S.time ? `${fmtDate(S.date)}, ${S.time} Uhr` : (S.date? fmtDate(S.date)+' – Uhrzeit wählen' : ''), 'Noch nicht gewählt');
+    $('sPrice').textContent = !s ? '–' : (t==null ? 'auf Anfrage' : chf(t));
+  }
+
+  /* init (+ ?service=id deep link from the price pages) */
+  renderSteps(); renderTabs(); renderOpts(); summary();
+  let pre = new URLSearchParams(location.search).get('service');
+  if(pre==='weitere-zone') pre='ganzkoerper';
+  const ps = SERVICES.find(s=>s.id===pre);
+  if(ps){ S.svc=ps.id; $('n1').disabled=false; S.cat='all'; renderOpts(); summary(); go(2); window.scrollTo(0,0); }
+})();
+</script>
+</body>
+</html>

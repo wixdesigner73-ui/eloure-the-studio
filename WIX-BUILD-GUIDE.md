@@ -9,7 +9,7 @@
 | # | Finding | Action |
 |---|---|---|
 | 1 | **Services page** (`/book-online`) lists 35 services with **no Frauen/Männer distinction** visible. The brief asks to preserve it. | Check in Wix Bookings → Services whether categories exist. If not, ask the owners how to split them – don't guess. |
-| 2 | **Duplicate service names** with different data: *Ganzkörper* (179 / 1h15, 169 as "halbes Bein", 249 / 2h), *Bauch* (49/15 min and 69/30 min), *Achseln* ×2, *Hände* ×2, *Füsse* ×2, *Beine* vs *Beine komplett* (both 129/45). | Likely intentional variants or leftovers. Confirm, then rename (e.g. "Bauch – klein / gross") or delete duplicates **in Wix Bookings**, not in the design. |
+| 2 | **Duplicate service names**: *Ganzkörper* (179 / 1h15, 169 as "halbes Bein", 249 / 2h) and *Bauch* (49/15 min and 69/30 min) differ in data; *Achseln*, *Hände*, *Füsse* are listed twice with identical data (shown once in the prototype); *Beine* vs *Beine komplett* are both 129/45. | Likely intentional variants or leftovers. Confirm, then rename (e.g. "Bauch – klein / gross") or delete duplicates **in Wix Bookings**, not in the design. |
 | 3 | **Only the last service** ("Jede weitere Zone") exposed a real booking URL; the others showed `#` to my fetch tool (likely a JS-rendered widget). | In the Editor, use the **Bookings Services List** element and let Wix handle links. Verify every button after publishing. |
 | 4 | **FAQ #7 "Wann wirkt Laserhaarentfernung?"** has only an "X" as the answer. | Write the answer or remove the entry. |
 | 5 | **Wording on existing site / brief** like "dauerhafte Haarentfernung", "langanhaltend glatte Haut", "dauerhafte Reduktion" are result claims. The existing FAQ itself says results are *not permanent*. | I kept your requested heading "langanhaltend glatter Haut"; consider softening (e.g. "Dein Weg zu glatter Haut."). Avoid "dauerhaft" in SEO titles unless you can substantiate it. |
@@ -220,8 +220,8 @@ Source of truth is Wix Bookings – this table is only a cross-check. "—" = no
 | Unterschenkel | 30 | 89 | |
 | Beine komplett | 45 | 129 | |
 | Beine | 45 | 129 | evtl. Duplikat von "Beine komplett" |
-| Füsse inkl. Zehen (×3 gelistet) | 15 | 29 | Duplikate prüfen |
-| Hände inkl. Finger (×3 gelistet) | 15 | 29 | Duplikate prüfen |
+| Füsse inkl. Zehen (×2 gelistet) | 15 | 29 | Duplikat prüfen |
+| Hände inkl. Finger (×2 gelistet) | 15 | 29 | Duplikat prüfen |
 | Konturen | 15 | 35 | |
 | Jede weitere Zone | 25 | 15 | nur mit Ganzkörperbehandlung; Link: `/booking-calendar/jede-weitere-zone-2` |
 
