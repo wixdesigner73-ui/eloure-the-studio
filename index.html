@@ -12,7 +12,7 @@
 <style>
 /* hero */
 .hero{position:relative;background:linear-gradient(120deg,var(--ivory) 45%,var(--cream));overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;min-height:640px;gap:20px}
+.hero .wrap{display:grid;grid-template-columns:.9fr 1.25fr;align-items:center;min-height:640px;gap:20px}
 .hero-copy{padding:70px 0;position:relative;z-index:2}
 .hero h1{font-size:clamp(44px,6vw,76px);margin:22px 0 24px;line-height:1.02}
 .hero h1 .line{display:block;overflow:hidden}
@@ -36,7 +36,7 @@
 .about{background:var(--white);padding:100px 0}
 .about .wrap{display:grid;grid-template-columns:1fr 1.05fr .62fr;gap:56px;align-items:center}
 .about-img{position:relative}
-.about-img .photo{aspect-ratio:1/1.02;border-radius:44px 44px 44px 44px;background-size:cover;background-position:center;box-shadow:var(--shadow-lg)}
+.about-img .photo{aspect-ratio:4/5;border-radius:44px 44px 44px 44px;background-size:cover;background-position:center;box-shadow:var(--shadow-lg)}
 .about-img::before{content:"";position:absolute;left:-26px;bottom:-26px;width:170px;height:170px;border-radius:50%;background:var(--cream);z-index:-1}
 .about h2{margin:14px 0 20px}
 .about p{color:#4a463e;margin-bottom:28px}
@@ -63,7 +63,7 @@
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .pcard{background:var(--ivory);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);transition:transform .5s var(--ease),box-shadow .5s}
 .pcard:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-.pimg{aspect-ratio:4/3;overflow:hidden;position:relative}
+.pimg{aspect-ratio:4/5;overflow:hidden;position:relative}
 .pimg div{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.1s var(--ease)}
 .pcard:hover .pimg div{transform:scale(1.06)}
 .pimg .tag{position:absolute;left:16px;top:16px;z-index:2;background:var(--white);border-radius:999px;padding:6px 14px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--olive-deep)}
@@ -111,7 +111,7 @@
 .contact{background:var(--ivory);padding:90px 0 100px}
 .cbox{display:grid;grid-template-columns:1fr 1fr;background:var(--white);border-radius:30px;overflow:hidden;box-shadow:var(--shadow-lg)}
 .cleft{background:var(--cream);padding:48px 46px;display:flex;flex-direction:column;gap:18px;position:relative}
-.cleft .photo{height:210px;border-radius:22px;background-size:cover;background-position:center}
+.cleft .photo{aspect-ratio:3/2;border-radius:22px;background-size:cover;background-position:center}
 .cleft h2{font-size:clamp(30px,3.4vw,40px)}
 .cd{display:grid;gap:12px;font-size:14px;margin-top:6px}
 .cd div{display:flex;gap:12px;align-items:flex-start}

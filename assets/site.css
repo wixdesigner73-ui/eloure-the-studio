@@ -55,7 +55,7 @@ nav a:hover::after,nav a.active::after{transform:scaleX(1)}
 .phero .blob{position:absolute;border-radius:50%;background:var(--beige);opacity:.5;right:-90px;top:-60px;width:360px;height:360px;animation:float 9s ease-in-out infinite}
 .phero .blob.b2{width:120px;height:120px;right:240px;top:auto;bottom:-30px;background:var(--terra);opacity:.18;animation-delay:-3s}
 .phero.has-img .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
-.phero-img{aspect-ratio:4/4.4;border-radius:44px 44px 44px 160px;box-shadow:var(--shadow-lg);max-height:440px;width:100%}
+.phero-img{aspect-ratio:var(--ar,4/5);border-radius:44px 44px 44px 160px;box-shadow:var(--shadow-lg);width:100%}
 @media(max-width:980px){.phero.has-img .wrap{grid-template-columns:1fr;gap:34px}.phero-img{aspect-ratio:4/3;border-radius:34px 34px 34px 90px}}
 .crumbs{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#7a756b}
 .crumbs a:hover{color:var(--terra)}

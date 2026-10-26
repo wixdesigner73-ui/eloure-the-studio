@@ -21,6 +21,12 @@ const IMG = {
   treatment: 'images/treatment.jpg'
 };
 
+/* focal point per photo (background-position) so faces / subjects stay in frame when a box crops */
+const FOCUS = {
+  hero:'40% 30%', portrait1:'50% 18%', portrait2:'50% 22%', legs:'50% 60%',
+  room:'50% 55%', window:'50% 55%', lounge:'50% 50%', sofa:'50% 50%', armchair:'50% 45%'
+};
+
 const NAV = [
   ['index.html','Start','home'],
   ['leistungen.html','Leistungen & Preise','leistungen'],
@@ -80,6 +86,7 @@ function applyImages(root=document){
   root.querySelectorAll('[data-img]').forEach(el=>{
     const u = IMG[el.dataset.img]; if(!u) return;
     el.style.backgroundImage = `url("${u}")`;
+    if(FOCUS[el.dataset.img] && !el.closest('.crop')) el.style.backgroundPosition = FOCUS[el.dataset.img];
     el.classList.add('photo');
   });
   root.querySelectorAll('img[data-src]').forEach(el=>{ el.src = IMG[el.dataset.src]; });
