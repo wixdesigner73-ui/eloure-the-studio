@@ -13,7 +13,7 @@
 .split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
 .split.rev .pic{order:2}
 .pic{position:relative}
-.pic .photo{aspect-ratio:3/4;border-radius:160px 160px 40px 40px;box-shadow:var(--shadow-lg)}
+.pic{max-width:430px;width:100%}.pic .photo{aspect-ratio:2/3;border-radius:160px 160px 40px 40px;box-shadow:var(--shadow-lg)}
 .pic.sq .photo{border-radius:44px;aspect-ratio:1/1.05}
 .pic.wide .photo{border-radius:44px;aspect-ratio:3/2}
 .pic::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:var(--cream);left:-28px;bottom:-28px;z-index:-1}
